@@ -8,7 +8,6 @@ const render = () => {
 
   const tasksEl = document.createElement('ul');
   
-
   tasks.forEach((task) => {
     const taskEl = document.createElement('li');
     const taskTitleEl = document.createElement('div');
@@ -24,6 +23,5 @@ const render = () => {
   rootEl.append(tasksEl);
 
 }
-
 
 render()
