@@ -1,11 +1,10 @@
-
 # 🚀 ИНЖЕНЕРНЫЙ СПЕЦНАЗ: REACT 2026
 
-## От новичка до Middle+ за 4 месяца жесткого тренинга
+## От новичка до Middle+ за 4–5 месяцев жесткого тренинга
 
 > **Философия:** Ты не просто учишь библиотеки — ты учишься решать проблемы бизнеса.  
 > Каждый модуль заканчивается задачей, которая могла бы прийти в реальном спринте.  
-> **Никакого `any` без объяснения. Никаких пропусков. Только код и архитектура.**
+> **Никакого `any` без объяснения. Никаких пропусков. Только код, архитектура и инженерное мышление.**
 
 ---
 
@@ -13,21 +12,24 @@
 
 | Скилл | Уровень |
 |-------|---------|
-| TypeScript (Generics, Unions, Utility Types, Conditional Types) | ⭐⭐⭐⭐⭐ |
+| TypeScript (Generics, Conditional, Mapped, Template Literal Types) | ⭐⭐⭐⭐⭐ |
 | React (Hooks, Composition, Performance, Compound Components) | ⭐⭐⭐⭐⭐ |
-| Next.js 15 (App Router, RSC, Server Actions, Caching) | ⭐⭐⭐⭐⭐ |
-| tRPC + Prisma (Fullstack типобезопасность, WebSockets) | ⭐⭐⭐⭐⭐ |
+| Next.js 15 (App Router, RSC, Server Actions, Caching, Streaming) | ⭐⭐⭐⭐⭐ |
+| Асинхронность (Event Loop, Promise, Async/Await, AbortController, Debounce/Throttle) | ⭐⭐⭐⭐⭐ |
+| Многопоточность (Web Workers, Shared Workers, Service Workers, Comlink, OffscreenCanvas) | ⭐⭐⭐⭐ |
+| Fullstack (tRPC + Prisma, WebSocket) | ⭐⭐⭐⭐⭐ |
 | State Management (React Query + Zustand) | ⭐⭐⭐⭐⭐ |
-| Тестирование (Unit, Integration, E2E, a11y) | ⭐⭐⭐⭐ |
-| Архитектура (Feature-Based, SOLID, Adapters, Services) | ⭐⭐⭐⭐⭐ |
+| Тестирование (Unit, Integration, E2E, a11y, асинхронное) | ⭐⭐⭐⭐ |
+| Архитектура (Feature-Based, SOLID, Adapters, Services, Dependency Injection) | ⭐⭐⭐⭐⭐ |
 | CI/CD (GitHub Actions, автоматизация) | ⭐⭐⭐⭐ |
 | Безопасность (XSS, CSRF, JWT в cookies) | ⭐⭐⭐⭐ |
 | Мониторинг (Sentry, Web Vitals) | ⭐⭐⭐ |
-| PWA, WebSocket, i18n, работа с файлами (Excel, PDF) | ⭐⭐⭐ |
+| PWA, Offline, Push-уведомления | ⭐⭐⭐⭐ |
+| Работа с файлами (Excel, PDF, большие данные) | ⭐⭐⭐⭐ |
 
 ---
 
-## 📚 СТРУКТУРА КУРСА (13 МОДУЛЕЙ)
+## 📚 СТРУКТУРА КУРСА (15 МОДУЛЕЙ)
 
 ### Модуль 0: Боевая подготовка
 - Настройка VSCode, pnpm, Git (rebase, stash, cherry-pick)
@@ -61,64 +63,93 @@
 - **Практика:** Каталог с фильтрами (цена, категория) в URL
 
 ### Модуль 5: Состояние и данные – сервер vs клиент
-- React Query: оптимистичные обновления, зависимые запросы, бесконечный скролл
+- React Query: оптимистичные обновления, зависимые запросы, бесконечный скролл, параллельные запросы
 - Zustand (клиентское состояние)
 - React Hook Form + Zod (сложные формы, массивы полей)
 - **Практика:** Личный кабинет с профилем, аватаром, таблицей заказов
 
-### Модуль 6: Fullstack на tRPC + Prisma
-- Prisma: модели, миграции, отношения, CRUD
-- tRPC: роутеры, middleware, валидация, ошибки
-- JWT в httpOnly cookies (безопасность)
-- **Практика:** Блог с комментариями, авторизация, роли
+---
 
-### Модуль 7: Next.js 15 – серверный рендеринг
+### Модуль 6: АСИНХРОННОСТЬ В JAVASCRIPT (НОВЫЙ!)
+- Event Loop, Microtasks и Macrotasks – как всё работает под капотом
+- Promise: состояния, цепочки, статические методы, создание своего Promise
+- Async/Await: сахар и его работа на генераторах
+- Отмена операций: `AbortController`, `AbortSignal`, отмена fetch и собственных операций
+- Race Conditions и борьба с ними (паттерн «последний победил»)
+- Debounce и Throttle – реализация, применение
+- Асинхронные итераторы и генераторы (`async function*`, `for await...of`)
+- **Практика:** Поиск с автодополнением (debounce + отмена запросов), потоковая загрузка данных
+
+---
+
+### Модуль 7: Fullstack на tRPC + Prisma
+- Prisma: модели, миграции, отношения, CRUD
+- tRPC: роутеры, middleware, валидация, ошибки, подписки (WebSocket)
+- JWT в httpOnly cookies (безопасность)
+- **Практика:** Блог с комментариями, авторизация, роли, real-time обновления
+
+### Модуль 8: Next.js 15 – серверный рендеринг и оптимизация
 - App Router: layouts, loading, error, streaming
 - Server Components vs Client Components
-- Server Actions (мутации без API)
+- Server Actions (асинхронные мутации без API)
 - Стратегии кэширования: Request Memoization, Data Cache, Full Route Cache
-- **Практика:** Миграция проекта с Vite на Next.js
+- Middleware, Edge Runtime, динамические метаданные
+- **Практика:** Миграция проекта с Vite на Next.js с грамотным кэшированием
 
-### Модуль 8: Архитектура – код, который живёт годами
-- Feature-Based структура
-- Adapter Pattern (трансформация данных)
-- Repository Pattern и Service Layer
+### Модуль 9: Архитектура – код, который живёт годами
+- Feature-Based структура (группировка по фичам)
+- Adapter Pattern (трансформация данных с бэка)
+- Repository Pattern и Service Layer (абстракция над API)
 - Dependency Injection
 - **Практика:** Рефакторинг по SOLID + адаптеры для API
 
-### Модуль 9: Тесты, безопасность, мониторинг, производительность
-- Unit (Vitest), Integration, E2E (Playwright)
-- Тестирование Server Components и tRPC
+---
+
+### Модуль 10: МНОГОПОТОЧНОСТЬ В БРАУЗЕРЕ (НОВЫЙ!)
+- Web Workers: создание, обмен данными (`postMessage`), ограничения
+- Transferable Objects – передача данных без копирования (ArrayBuffer)
+- SharedArrayBuffer (общая память) – с осторожностью
+- Comlink – RPC-библиотека для удобной работы с воркерами
+- OffscreenCanvas – рендеринг в фоновом потоке
+- Shared Workers – общение между вкладками
+- Service Workers – прокси, перехват запросов, кэширование, оффлайн
+- **Практика:** Обработка изображений в воркере, экспорт отчётов в фоне, PWA с Service Worker
+
+---
+
+### Модуль 11: Тесты, безопасность, мониторинг, производительность
+- Тесты: Unit (Vitest), Integration, E2E (Playwright)
+- Тестирование Server Components, tRPC процедур, асинхронного кода, Web Workers
 - a11y-тесты (axe)
-- Sentry (ошибки), Web Vitals
-- Оптимизация: memo, виртуализация (react-window)
+- Безопасность: XSS, CSRF, JWT в cookies, Helmet, CORS
+- Мониторинг: Sentry (ошибки), Web Vitals
+- Производительность: профилировка, memo, виртуализация (react-window), Code Splitting
 - **Практика:** Настроить CI/CD с блокировкой мержа при падении тестов, добавить Sentry
 
-### Модуль 10: Реальное время (WebSocket)
-- Socket.io сервер в Next.js
+### Модуль 12: Реальное время (WebSocket)
+- Socket.io сервер в Next.js (или отдельно)
 - Хук `useSocket`
 - Real-time чат или уведомления
 - **Практика:** Чат в HR-панели
 
-### Модуль 11: Работа с файлами и данными
-- Импорт/экспорт Excel (xlsx)
+### Модуль 13: Работа с файлами и данными
+- Импорт/экспорт Excel (xlsx) – с обработкой в воркере
 - Экспорт PDF (react-pdf)
-- Загрузка больших файлов с прогрессом
+- Загрузка больших файлов с прогрессом, прерыванием, возобновлением
 - **Практика:** Импорт кандидатов из Excel, экспорт отчёта в PDF
 
-### Модуль 12: Offline и PWA
-- Service Worker, кэширование статики и API
+### Модуль 14: Offline и PWA
+- Service Worker: регистрация, кэширование статики и API, обновление
 - Оффлайн-режим
 - Push-уведомления
-- **Практика:** Сделать приложение доступным офлайн
+- **Практика:** Сделать приложение доступным офлайн, настроить уведомления о новых вакансиях
 
-### Модуль 13: Боевой полигон (финальный аккорд)
-5 задач с ограничением по времени (2-3 часа каждая):
-1. Список с фильтрацией и пагинацией (React + TS + React Query)
-2. Динамическая форма (RHF + Zod)
-3. Оптимизация медленного приложения
-4. Написание хука с дебаунсом и localStorage
-5. Интеграция с внешним API (клиент + типизация)
+### Модуль 15: БОНУС – Продвинутые паттерны асинхронности
+- RxJS (базово) – реактивные потоки
+- Async/Await vs Generators – когда что использовать
+- Cancellation Tokens (своя реализация)
+- Async Iterators – применение в реальных задачах
+- **Практика:** Реализовать простой аналог RxJS или потоковую обработку данных
 
 ---
 
@@ -129,11 +160,11 @@
 - Next.js 15 (App Router) + tRPC + Prisma (PostgreSQL)
 - Аутентификация (JWT в cookies) + роли (админ/рекрутер)
 - Дашборд с графиками (Recharts)
-- Список кандидатов (виртуализация, фильтры в URL, экспорт Excel)
+- Список кандидатов с виртуализацией, фильтрами (в URL), экспортом в Excel (в воркере)
 - Чат (WebSocket) между рекрутерами
-- Импорт кандидатов из Excel
-- PWA + оффлайн
-- Полные тесты (Unit + Integration + E2E)
+- Импорт кандидатов из Excel (с обработкой в воркере)
+- PWA + оффлайн (Service Worker)
+- Полные тесты (Unit + Integration + E2E, включая асинхронные)
 - Sentry + Web Vitals
 - Деплой на Vercel с GitHub Actions
 
@@ -143,7 +174,7 @@
 
 1. **Запрет на `any`** – каждое использование должно быть обосновано в комментарии.
 2. **Code Review** – после каждого модуля создаёшь Pull Request. Я ревьювлю как в FAANG.
-3. **Защита модуля** – ты должен объяснить каждую строчку кода устно.
+3. **Защита модуля** – ты должен объяснить каждую строчку кода устно (или письменно).
 4. **Дедлайны** – не гонись, лучше разобраться один раз, чем переписывать десять.
 5. **Проходной балл** – для перехода к следующему модулю нужно набрать ≥ 80% по критериям (код, типы, читаемость, тесты, объяснение).
 
@@ -163,18 +194,27 @@
 
 ## 📚 ПОЛЕЗНЫЕ РЕСУРСЫ
 
-- [Next.js Docs](https://nextjs.org/docs)
-- [TanStack Query Docs](https://tanstack.com/query)
-- [tRPC Docs](https://trpc.io)
-- [Prisma Docs](https://www.prisma.io/docs)
-- [Zod Docs](https://zod.dev)
+**Официальная документация:**
+- [Next.js](https://nextjs.org/docs)
+- [TanStack Query](https://tanstack.com/query)
+- [tRPC](https://trpc.io)
+- [Prisma](https://www.prisma.io/docs)
+- [Zod](https://zod.dev)
 - [React Hook Form](https://react-hook-form.com)
 - [Vitest](https://vitest.dev)
 - [Playwright](https://playwright.dev)
 - [Sentry](https://sentry.io)
+- [Comlink](https://github.com/GoogleChromeLabs/comlink)
+- [MDN: Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
+- [MDN: Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 
-**YouTube:** UlbiTV, Хватит спорить (Артем Мичурин)  
-**Книга:** "Чистая архитектура" – Роберт Мартин
+**Книги:**
+- "Чистая архитектура" – Роберт Мартин (для мышления)
+- "RxJS in Action" – для бонусного модуля (опционально)
+
+**YouTube:**
+- UlbiTV
+- Хватит спорить (Артем Мичурин)
 
 ---
 
