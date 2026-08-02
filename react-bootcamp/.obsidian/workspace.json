@@ -186,6 +186,7 @@
   },
   "active": "6e17d83f17825251",
   "lastOpenFiles": [
+    "module-0/lecture-0.5.md",
     "eslint.config.mjs",
     "eslint.config.js",
     "package.json.912235697",
@@ -196,7 +197,6 @@
     "tasks/task-0.1/node_modules/@typescript-eslint",
     "tasks/task-0.1/eslint.config.js.bak",
     "tasks/task-0.1/src/bad.ts",
-    "tasks/task-0.1/src/check.js",
     "module-0/lecture-0.3.md",
     "tasks/task-0.1/README.md",
     "tasks/task-0.1/src/assets/vite.svg",
