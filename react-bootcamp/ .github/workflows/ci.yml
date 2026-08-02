@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  root-utils:
+    name: Root utils (TypeScript + ESLint + Vitest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test:run
+
+  tasks:
+    name: Task ${{ matrix.task }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        task: [task-0.1]  # Добавляй новые по мере появления
+    defaults:
+      run:
+        working-directory: tasks/${{ matrix.task }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: tasks/${{ matrix.task }}/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test:run  # Если в task есть тесты

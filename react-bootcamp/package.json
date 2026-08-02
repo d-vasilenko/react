@@ -1,16 +1,24 @@
 {
+  "name": "react-bootcamp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@11.18.0+sha512.33d83c77da82f49fba836925c6f1b841181ec3132b670639bd012f7075f5c7cf634c5f870147c19aae7478fac01df09d8892e880454896edd23ee9b33757563c",
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "all:check": "pnpm typecheck && pnpm lint && pnpm test:run"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^24.13.3",
     "eslint": "^10.8.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.3",
     "prettier": "^3.9.6",
-    "typescript-eslint": "^8.65.0"
-  },
-  "packageManager": "pnpm@11.18.0+sha512.33d83c77da82f49fba836925c6f1b841181ec3132b670639bd012f7075f5c7cf634c5f870147c19aae7478fac01df09d8892e880454896edd23ee9b33757563c"
+    "typescript": "~5.8.0",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
+  }
 }
