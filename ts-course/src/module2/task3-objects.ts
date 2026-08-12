@@ -102,3 +102,21 @@ const sum: BinaryOperation = (a, b) => a + b;
 console.log(sum(1, 4)); 
 
 // 9
+const someObj = {
+  one: 1,
+  two: 2,
+  three: 3,
+}
+
+function countKey(obj: Record<string, unknown>): number {
+  return Object.keys(obj).length;
+}
+console.log(countKey(someObj)); // myInfo ругаеться на то что Employee не имеет параметров типа Record<string, unknown
+
+// 10
+interface NumberArray {
+  [index: number]: number;
+}
+
+const someArray: NumberArray = [1, 4, 5, 6, 5];
+console.log(someArray);
