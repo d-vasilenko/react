@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/module0/hello.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "build": "tsc --noEmit && pnpm run tsc7",
+  "tsc7": "node_modules/@typescript/native/bin/tsc",
+  "start": "node dist/module0/hello.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,8 @@
     "@eslint/js": "^10.0.1",
     "@types/node": "^26.1.2",
     "eslint": "^10.8.0",
-    "typescript": "^7.0.2",
+    "typescript": "^5.6.2",
+    "@typescript/native": "npm:typescript@7.0.2",
     "typescript-eslint": "^8.66.0"
   }
 }
