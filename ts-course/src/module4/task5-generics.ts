@@ -40,4 +40,14 @@ const someBox02: Box<string> = {
 console.log(someBox01);
 console.log(someBox02)
 
+// 5
+function merge<T, U>(a: T, b: U): T & U {
+  return {
+    ...a,
+    ...b,
+  }
+}
+
+console.log(merge({name: 'denis'}, {age: 43}));
+
  export {}

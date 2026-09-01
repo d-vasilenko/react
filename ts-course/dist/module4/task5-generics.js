@@ -27,3 +27,11 @@ const someBox02 = {
 };
 console.log(someBox01);
 console.log(someBox02);
+// 5
+function merge(a, b) {
+    return {
+        ...a,
+        ...b,
+    };
+}
+console.log(merge({ name: 'denis' }, { age: 43 }));
