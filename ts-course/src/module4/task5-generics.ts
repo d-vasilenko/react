@@ -50,4 +50,32 @@ function merge<T, U>(a: T, b: U): T & U {
 
 console.log(merge({name: 'denis'}, {age: 43}));
 
- export {}
+// 6
+interface ApiResponse<T> {
+  data: T;
+  status: number;
+}
+
+const someInterface: ApiResponse<{ name: string }> = {
+  data: { name: 'some text'},
+  status: 200,
+}
+
+// 7
+class Stack<T> {
+  private data: T[] = [];
+  push(item: T): void {
+    this.data.push(item);
+  };
+  pop(): T | undefined {
+    return this.data.pop();
+  }
+} 
+
+const someClass = new Stack<number>();
+
+console.log(someClass);
+
+
+
+export {}
