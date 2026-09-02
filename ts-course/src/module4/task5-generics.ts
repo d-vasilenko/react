@@ -61,6 +61,8 @@ const someInterface: ApiResponse<{ name: string }> = {
   status: 200,
 }
 
+console.log(someInterface);
+
 // 7
 class Stack<T> {
   private data: T[] = [];
