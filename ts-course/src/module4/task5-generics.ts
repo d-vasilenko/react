@@ -64,19 +64,7 @@ const someInterface: ApiResponse<{ name: string }> = {
 console.log(someInterface);
 
 // 7
-class Stack<T> {
-  private data: T[] = [];
-  push(item: T): void {
-    this.data.push(item);
-  };
-  pop(): T | undefined {
-    return this.data.pop();
-  }
-} 
 
-const someClass = new Stack<number>();
-
-console.log(someClass);
 
 
 
