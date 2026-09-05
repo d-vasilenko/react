@@ -72,7 +72,7 @@ class Stack<T> {
     return this.dataArray.pop();
   }
   getData(): T[] {
-    return this.dataArray;
+    return [...this.dataArray];
   }
 }
 

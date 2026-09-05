@@ -52,7 +52,7 @@ class Stack {
         return this.dataArray.pop();
     }
     getData() {
-        return this.dataArray;
+        return [...this.dataArray];
     }
 }
 const testClass = new Stack();
