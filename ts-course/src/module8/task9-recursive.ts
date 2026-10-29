@@ -36,7 +36,7 @@ type I2DeepReadOnly3 = DeepReadonly3<I2>;
 
 
 // 3
-type DeepReadonly4<T> = T extends (...args: unknown[]) => unknown
+type DeepReadonly4<T> = T extends (...args: any[]) => any
   ? T
   : T extends (infer U)[]
     ? ReadonlyArray<DeepReadonly4<U>>
@@ -61,6 +61,56 @@ type DeepReadonly5<T> = T extends (...args: any[]) => any
 type I4 = DeepReadonly5<{ createAt: Date; name: string }>;
 
 // 5
+type DeepReadonly6<T> = T extends Date
+  ? T
+  : T extends Map<infer K, infer V>
+    ? ReadonlyMap<DeepReadonly6<K>, DeepReadonly6<V>>
+    : T extends Set<infer S>
+      ? ReadonlySet<DeepReadonly6<S>>
+      : T extends (...args: any[]) => any
+        ? T
+        : T extends (infer U)[]
+          ? ReadonlyArray<DeepReadonly6<U>>
+          : T extends object
+            ? { readonly [P in keyof T]: DeepReadonly6<T[P]> }
+            : T
+
+type I5 = DeepReadonly6<{ map: Map<string, { value: number }> }>
+
+// 6
+type DeepPartialV1<T> = T extends Date
+  ? T
+  : T extends Map<infer K, infer V>
+    ? Map<K, V>
+    : T extends Set<infer S>
+      ? Set<S>
+      : T extends (...args: any[]) => any
+        ? T
+        : T extends (infer U)[]
+          ? Array<DeepPartialV1<U>>
+          : T extends object
+            ? { [P in keyof T]?: DeepPartialV1<T[P]> }
+            : T
+
+type I6 = DeepPartialV1<{ name: string; address: { city: string } }>
+
+
+// 7
+type DeepRequiredV1<T> = T extends Date
+  ? T
+  : T extends Map<infer K, infer V>
+    ? Map<K, V>
+    : T extends Set<infer U>
+      ? Set<U>
+      : T extends (...args: any[]) => any
+        ? T
+        : T extends (infer U)[]
+          ? Array<DeepRequiredV1<U>>
+          : T extends object
+            ? { [P in keyof T]-?: DeepRequiredV1<T[P]> }
+            : T
+
+type I7 = DeepRequiredV1<{ name?: string; address?: { city?: string } }>
 
 
 export {}
